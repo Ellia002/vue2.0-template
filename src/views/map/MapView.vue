@@ -9,7 +9,7 @@
 <script>
 import * as echarts from 'echarts';
 export default {
-  name: 'HomeView',
+  name: 'MapView',
   data() {
     return {};
   },

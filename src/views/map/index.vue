@@ -1,15 +1,13 @@
 <template>
-  <div
-    ref="myChart"
-    class="chart-box"
-    style="width: 500px; height: 300px"
-  ></div>
+  <div class="map-view">
+    <div ref="myChart" class="chart-box"></div>
+  </div>
 </template>
 
 <script>
 import * as echarts from 'echarts';
 export default {
-  name: 'HomeView',
+  name: 'MapView',
   data() {
     return {};
   },
@@ -295,3 +293,10 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.chart-box {
+  margin: -24px auto;
+  width: var(--main-width);
+  height: 600px;
+}
+</style>

@@ -1,7 +1,5 @@
 <template>
-  <div class="main-box">
-    主页
-  </div>
+  <div class="main-box">主页</div>
 </template>
 <script>
 export default {
@@ -19,6 +17,4 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

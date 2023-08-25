@@ -27,7 +27,7 @@ export default {
 .nav-bar {
   margin-bottom: 24px;
   height: 80px;
-  background: linear-gradient(90deg, #006DF2 0%, #00C07E 100%);
+  background: linear-gradient(90deg, #006df2 0%, #00c07e 100%);
   &-menu {
     margin: 0 auto;
     padding-right: 30px;

@@ -13,9 +13,7 @@
 export default {
   name: 'HeaderComp',
   data() {
-    return {
-
-    }
+    return {};
   },
   mounted() {
     this.handleHeader();
@@ -42,14 +40,14 @@ export default {
       font-size: 32px;
       font-family: YouSheBiaoTiHei, sans-serif;
       font-weight: 400;
-      color: #2268BD;
+      color: #2268bd;
       line-height: 1;
     }
     &-en {
       font-size: 14px;
       font-family: Arial, sans-serif;
       font-weight: 400;
-      color: #2268BD;
+      color: #2268bd;
       line-height: 1;
     }
   }
@@ -57,8 +55,8 @@ export default {
     width: 136px;
     height: 48px;
     border-radius: 4px;
-    border-color: #0072EC;
-    background-color: #0072EC;
+    border-color: #0072ec;
+    background-color: #0072ec;
     &:hover {
       opacity: 0.7;
     }

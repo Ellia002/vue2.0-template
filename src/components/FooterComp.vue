@@ -7,7 +7,8 @@
           <span class="mail">bzy@163.cor</span>
         </p>
         <p class="copy-right">
-          中国电子技术标准化研究院<span class="middle">版权所有</span>京公网安备1123654898455
+          中国电子技术标准化研究院<span class="middle">版权所有</span
+          >京公网安备1123654898455
         </p>
       </div>
       <div class="right-box">

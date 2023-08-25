@@ -2,7 +2,11 @@
   <div class="home-box">
     <div class="main-box">
       <div class="policy-box">
-        <div class="photo-box"></div>
+        <div class="photo-box">
+          <p class="desc-text">
+            中国光伏行业协会标委会组件工作组和支撑部件工作组2023年第一次工作会议顺利召开
+          </p>
+        </div>
         <div class="policy-area"></div>
       </div>
       <div class="news-box">
@@ -129,6 +133,32 @@ export default {
   .main-box {
     margin: 0 auto 41px;
     width: var(--main-width);
+    .policy-box {
+      margin-bottom: 45px;
+      display: flex;
+      justify-content: space-between;
+      .photo-box {
+        width: 740px;
+        height: 370px;
+        position: relative;
+        border: 1px solid #ccc;
+        .desc-text {
+          padding: 16px;
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+          left: 0;
+          font-size: 16px;
+          font-weight: 400;
+          color: #ffffff;
+          text-align: center;
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+      }
+      .policy-area {
+        width: 516px;
+      }
+    }
     .img-list {
       display: flex;
       justify-content: space-between;

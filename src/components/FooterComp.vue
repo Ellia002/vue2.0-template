@@ -4,7 +4,7 @@
       <div class="left-box">
         <p class="contact">
           <span class="tel">400-123-666</span>
-          <span class="mail">bzy@163.cor</span>
+          <span class="mail">bzy@163.com</span>
         </p>
         <p class="copy-right">
           中国电子技术标准化研究院<span class="middle">版权所有</span
@@ -32,7 +32,6 @@ export default {
 .footer-area {
   margin-top: 20px;
   font-size: 14px;
-  font-family: Microsoft YaHei, sans-serif;
   color: #fff;
   line-height: 1;
   background-color: #202831;

@@ -38,15 +38,13 @@ export default {
     flex-direction: column;
     &-zh {
       font-size: 32px;
-      font-family: YouSheBiaoTiHei, sans-serif;
-      font-weight: 400;
+      font-family: 'YouSheBiaoTiHei', sans-serif;
       color: #2268bd;
       line-height: 1;
     }
     &-en {
       font-size: 14px;
-      font-family: Arial, sans-serif;
-      font-weight: 400;
+      font-family: 'Arial', sans-serif;
       color: #2268bd;
       line-height: 1;
     }

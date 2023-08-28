@@ -3,8 +3,8 @@
     <div class="footer-area-inner">
       <div class="left-box">
         <p class="contact">
-          <span class="tel">400-123-666</span>
-          <span class="mail">bzy@163.com</span>
+          <span class="tel">联系电话&nbsp;&nbsp;400-123-666</span>
+          <span class="mail">官方邮箱&nbsp;&nbsp;&nbsp;bzy@163.com</span>
         </p>
         <p class="copy-right">
           中国电子技术标准化研究院<span class="middle">版权所有</span
@@ -12,7 +12,7 @@
         </p>
       </div>
       <div class="right-box">
-        <div class="code-img"></div>
+        <div class="code-img"><img src="../assets/img/code.jpg" alt="" /></div>
         <p class="tips">官方微信</p>
       </div>
     </div>
@@ -45,6 +45,9 @@ export default {
     .left-box {
       .contact {
         margin-bottom: 48px;
+        .tel {
+          margin-right: 31px;
+        }
       }
       .copy-right {
         .middle {
@@ -58,7 +61,6 @@ export default {
         margin-bottom: 12px;
         width: 86px;
         height: 86px;
-        border: 1px solid rgb(87, 83, 83);
         img {
           width: 100%;
           height: 100%;

@@ -3,15 +3,67 @@
     <div class="main-box">
       <div class="policy-box">
         <div class="photo-box">
+          <img src="../../assets/img/photo.jpg" alt="" />
           <p class="desc-text">
             中国光伏行业协会标委会组件工作组和支撑部件工作组2023年第一次工作会议顺利召开
           </p>
         </div>
-        <div class="policy-area"></div>
+        <div class="policy-area">
+          <div class="com-tab-box">
+            <ul class="tab-list">
+              <li class="active">政策文件</li>
+            </ul>
+            <div class="more-icon" @click="viewMore('policy')">
+              <img src="../../assets/img/icon_more.png" alt="" />
+            </div>
+          </div>
+          <ul class="news-list">
+            <li v-for="(item, index) in policyList" :key="index">
+              <span class="title">{{ item.title }}</span>
+              <span class="date">{{ item.dateTime }}</span>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="news-box">
-        <div class="info-box"></div>
-        <div class="service-box"></div>
+        <div class="info-box">
+          <h2 class="head-line"><span>行业资讯</span></h2>
+          <div class="com-tab-box">
+            <ul class="tab-list">
+              <li
+                v-for="(item, index) in tabList"
+                :key="index"
+                :class="{ active: isCurrent === index }"
+                @click="handleClick(index)"
+              >
+                {{ item.menu }}
+              </li>
+            </ul>
+            <div class="more-icon" @click="viewMore('policy')">
+              <img src="../../assets/img/icon_more.png" alt="" />
+            </div>
+          </div>
+          <ul class="news-list">
+            <li v-for="(item, index) in infoList" :key="index">
+              <span class="title">{{ item.title }}</span>
+              <span class="date">{{ item.dateTime }}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="service-box">
+          <h2 class="head-line"><span>便捷服务大厅</span></h2>
+          <div class="cate-box">
+            <div class="cate-list" v-for="cate in cateArr" :key="cate.cateName">
+              <h3 class="cate-name">{{ cate.cateName }}</h3>
+              <ul class="sub-list">
+                <li v-for="(item, index) in cate.subList" :key="index">
+                  <div class="icon"><img :src="item.icon" alt="" /></div>
+                  <div class="name">{{ item.name }}</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="img-list">
         <div><img src="@/assets/img/image_show01.jpg" alt="" /></div>
@@ -116,14 +168,213 @@ export default {
           ],
         },
       ],
+      policyList: [
+        {
+          title:
+            '工业和信息化部等六部门关于推动能源电子工业和信息化部等六部门关于推动能源电子',
+          dateTime: '2023-07-25',
+        },
+        {
+          title: '《关于推动能源电子产业发展的知道意见》解读',
+          dateTime: '2023-07-25',
+        },
+        {
+          title: '一图读懂《关于推动能源电子产业发展的指导意见》',
+          dateTime: '2023-07-25',
+        },
+        {
+          title: '五部门关于印发《智能光伏产业创新发展行',
+          dateTime: '2023-07-25',
+        },
+        {
+          title: '住房和城乡建设部 交通运',
+          dateTime: '2023-07-25',
+        },
+        {
+          title: '国家发展改革委 财政部 国家能源局关于做',
+          dateTime: '2023-07-25',
+        },
+      ],
+      // 行业资讯tab
+      tabList: [
+        {
+          menu: '光伏回收',
+          type: '1',
+        },
+        {
+          menu: '智能光伏',
+          type: '2',
+        },
+        {
+          menu: '光伏碳足迹',
+          type: '3',
+        },
+        {
+          menu: '创新成果',
+          type: '4',
+        },
+        {
+          menu: '光伏标准',
+          type: '5',
+        },
+      ],
+      // 资讯列表
+      infoList: [
+        {
+          title:
+            '关于征集《低碳工业园区评价技术规范》团体标准编制组成员的通知关于征集《低碳工业园区评价技术规范》团体标准编制组成员的通知',
+          dateTime: '2023-07-25',
+        },
+        {
+          title:
+            '关于开展2023年工业通信业百项团体标准应用示范项目申报工作的通知',
+          dateTime: '2023-07-25',
+        },
+        {
+          title:
+            '电子标准院关于行业标准《低碳产品评价技术规范光伏组件》征求意见的通知',
+          dateTime: '2023-07-25',
+        },
+        {
+          title:
+            '关于征集中国光伏行业协会团体标准《光伏跟踪支架智能跟踪性能测试方法……',
+          dateTime: '2023-07-25',
+        },
+        {
+          title:
+            '中国光伏行业协会/电子标准院关于召开第三届光伏产业高质量发展与技术……',
+          dateTime: '2023-07-25',
+        },
+        {
+          title:
+            '中国光伏行业协会标委会 组件工作组和支撑部件工作组2023年第一次工作……',
+          dateTime: '2023-07-25',
+        },
+        {
+          title:
+            '电子标准院组织中国代表团参加国际电工委员会太阳光伏能源系统技术委员……',
+          dateTime: '2023-07-25',
+        },
+        {
+          title: '晶体硅光伏组件尺寸研讨会顺利召开',
+          dateTime: '2023-07-25',
+        },
+        {
+          title:
+            '关于征集中国光伏行业协会团体标准《晶体硅光伏电池用低压化学气相淀积……',
+          dateTime: '2023-07-25',
+        },
+        {
+          title:
+            '2023年IEC/TC 82大会中国代表团预备会暨《光伏领域国际标准化战略路线……',
+          dateTime: '2023-07-25',
+        },
+        {
+          title: '关于召开光伏组件回收与绿色低碳技术研讨会的通知',
+          dateTime: '2023-07-25',
+        },
+        {
+          title:
+            '全国太阳光伏能源系统标准化技术委员会（SAC/TC90）2022年度工作会议……',
+          dateTime: '2023-07-25',
+        },
+        {
+          title: '关于召开第三届中国光伏产业高质量发展与技术标准论坛的通知',
+          dateTime: '2023-07-25',
+        },
+        {
+          title: '关于召开光伏组件回收与绿色低碳技术研讨会的通知',
+          dateTime: '2023-07-25',
+        },
+      ],
+      // 便捷服务大厅
+      cateArr: [
+        {
+          cateName: '申报类',
+          subList: [
+            {
+              name: '回收企业申报',
+              icon: '',
+            },
+            {
+              name: '光伏行业规范条件申报',
+              icon: '',
+            },
+            {
+              name: '光伏行业规范条件申报',
+              icon: '',
+            },
+            {
+              name: '创新技术成果申报',
+              icon: '',
+            },
+            {
+              name: '标准立项申话',
+              icon: '',
+            },
+            {
+              name: '敬请期待',
+              icon: '',
+            },
+          ],
+        },
+        {
+          cateName: '服务类',
+          subList: [
+            {
+              name: '光伏智能制能力成热晓评价',
+              icon: '',
+            },
+            {
+              name: '智能光伏产品测试与实证',
+              icon: '',
+            },
+            {
+              name: '智能光伏系统钦件评测',
+              icon: '',
+            },
+            {
+              name: '技术成热晚评价',
+              icon: '',
+            },
+            {
+              name: '光伏企业碳核查',
+              icon: '',
+            },
+            {
+              name: '中请碳标签',
+              icon: '',
+            },
+          ],
+        },
+        {
+          cateName: '需求类',
+          subList: [
+            {
+              name: '回收需求发布',
+              icon: '',
+            },
+            {
+              name: '企业需求数据库',
+              icon: '',
+            },
+            {
+              name: '敬请期待',
+              icon: '',
+            },
+          ],
+        },
+      ],
+      isCurrent: 0,
     };
   },
-  mounted() {
-    this.handleHeader();
-  },
+  mounted() {},
   methods: {
-    handleHeader() {
-      console.log('ddasdsad');
+    viewMore(type) {
+      console.log('查看更多', type);
+    },
+    handleClick(index) {
+      this.isCurrent = index;
     },
   },
 };
@@ -133,6 +384,87 @@ export default {
   .main-box {
     margin: 0 auto 41px;
     width: var(--main-width);
+    // 公共央视
+    .head-line {
+      margin-bottom: 33px;
+      padding-bottom: 16px;
+      line-height: 1;
+      border-bottom: 1px solid #ccc;
+      span {
+        padding-left: 12px;
+        font-size: 22px;
+        color: #0a67f2;
+        display: inline-block;
+        border-left: 7px solid #0a67f2;
+      }
+    }
+    .com-tab-box {
+      margin-bottom: 29px;
+      padding: 0 0 13px 4px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid #e4eaf3;
+      .tab-list {
+        display: flex;
+        li {
+          font-size: 22px;
+          line-height: 23px;
+          color: #666666;
+          cursor: pointer;
+          & + li {
+            margin-left: 26px;
+          }
+          &.active {
+            color: #0a67f2;
+          }
+        }
+      }
+      .more-icon {
+        cursor: pointer;
+      }
+    }
+    .news-list {
+      li {
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        & + li {
+          margin-top: 22px;
+        }
+        .title {
+          padding-left: 18px;
+          flex: 1;
+          color: #33373f;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          word-break: keep-all;
+          position: relative;
+          &:hover {
+            color: #0a67f2;
+            &::before {
+              background: #0a67f2;
+            }
+          }
+          &::before {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 6px;
+            height: 6px;
+            background: #bebebe;
+            border-radius: 50%;
+            transform: translate(0, -50%);
+            content: '';
+          }
+        }
+        .date {
+          margin-left: 49px;
+          color: rgba(51, 55, 63, 0.6);
+        }
+      }
+    }
     .policy-box {
       margin-bottom: 45px;
       display: flex;
@@ -141,7 +473,10 @@ export default {
         width: 740px;
         height: 370px;
         position: relative;
-        border: 1px solid #ccc;
+        img {
+          width: 100%;
+          height: 100%;
+        }
         .desc-text {
           padding: 16px;
           position: absolute;
@@ -156,7 +491,64 @@ export default {
         }
       }
       .policy-area {
+        margin-top: 10px;
         width: 516px;
+      }
+    }
+    .news-box {
+      margin-bottom: 31px;
+      display: flex;
+      justify-content: space-between;
+      .info-box {
+        width: 740px;
+      }
+      .service-box {
+        width: 516px;
+        .cate-box {
+          padding: 30px 20px 59px;
+          background: linear-gradient(0deg, #f4faff 0%, #eff7fc 100%);
+          .cate-list {
+            & + .cate-list {
+              margin-top: 42px;
+            }
+          }
+          .cate-name {
+            margin-bottom: 24px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #343c48;
+            text-align: center;
+            line-height: 1;
+            background: url('@/assets/img/title_bg.png') no-repeat center center;
+          }
+          .sub-list {
+            margin-top: -15px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            li {
+              margin-top: 15px;
+              padding: 8px 4px;
+              width: calc(33.3% - 9px);
+              border: 1px solid rgba(34, 104, 189, 0.15);
+              box-shadow: 0px 3px 9px 0px rgba(96, 145, 195, 0.12);
+              background: #fff;
+              .icon {
+                margin: 0 auto 8px;
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                background-color: #eef8ff;
+              }
+              .name {
+                color: #333b43;
+                line-height: 16px;
+                text-align: center;
+                letter-spacing: -1px;
+              }
+            }
+          }
+        }
       }
     }
     .img-list {

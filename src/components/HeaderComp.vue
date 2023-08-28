@@ -34,10 +34,12 @@ export default {
   height: 120px;
   width: var(--main-width);
   .head-title {
+    margin-bottom: 14px;
     display: flex;
     flex-direction: column;
     &-zh {
-      font-size: 32px;
+      margin-bottom: 1px;
+      font-size: 42px;
       font-family: 'YouSheBiaoTiHei', sans-serif;
       color: #2268bd;
       line-height: 1;
@@ -47,9 +49,11 @@ export default {
       font-family: 'Arial', sans-serif;
       color: #2268bd;
       line-height: 1;
+      letter-spacing: 0.5px;
     }
   }
   .el-button {
+    font-size: 16px;
     width: 136px;
     height: 48px;
     border-radius: 4px;

@@ -30,6 +30,11 @@ const routes = [
         name: 'MapView',
         component: () => import('@/views/map/index.vue'),
       },
+      {
+        path: '/report',
+        name: 'ReportForm',
+        component: () => import('@/views/report/index.vue'),
+      },
     ],
   },
 ];

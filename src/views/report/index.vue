@@ -34,12 +34,15 @@
         </el-form-item>
         <el-form-item class="auto-code-item" label="短信验证码">
           <el-input v-model="form.authCode"></el-input>
-          <el-button v-if="countdown === 0" type="primary" @click="sendCode"
-            >发送</el-button
+          <el-button
+            :disabled="sending"
+            :type="sending ? '' : 'primary'"
+            @click="sendCode"
+            >{{ `${sending ? countdown + 's' : '发送'} ` }}</el-button
           >
-          <el-button disabled v-else type="primary" @click="sendCode"
-            >{{ countdown }}s</el-button
-          >
+          <!-- <el-button v-if="countdown > 0" disabled
+            >{{ countdown }}s按钮</el-button
+          > -->
         </el-form-item>
         <el-form-item class="head-title-item" label="技术信息"></el-form-item>
         <el-form-item label="技术描述">
@@ -100,6 +103,11 @@ export default {
   },
   mounted() {
     this.handleHeader();
+  },
+  computed: {
+    sending() {
+      return this.countdown > 0;
+    },
   },
   methods: {
     handleHeader() {

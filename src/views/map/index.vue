@@ -26,7 +26,6 @@
 <script>
 import MapView from './MapView.vue';
 import CompanyListQuery from './CompanyListQuery.vue';
-import { throttle } from 'lodash-es';
 export default {
   name: 'MainVisual',
   components: {
@@ -67,12 +66,12 @@ export default {
     },
   },
   mounted() {
-    window.addEventListener('wheel', () => throttle(this.handleScroll, 200));
+    window.addEventListener('mousewheel', this.handleScroll, { passive: true });
   },
   beforeDestroy() {
-    window.removeEventListener('resize', () =>
-      throttle(this.handleScroll, 200)
-    );
+    window.removeEventListener('mousewheel', this.handleScroll, {
+      passive: true,
+    });
   },
 };
 </script>

@@ -99,11 +99,11 @@ export default {
         },
         {
           title: '智能光伏',
-          path: '/map',
+          path: '/',
         },
         {
           title: '光伏地毯',
-          path: '/home',
+          path: '/',
         },
         {
           title: '创新成果产业化',
@@ -111,16 +111,16 @@ export default {
         },
         {
           title: '光伏标准',
-          path: '/home',
+          path: '/',
         },
         {
           title: '服务大厅',
-          path: '/home',
+          path: '/',
           isSpecial: true,
         },
         {
           title: '关于我们',
-          path: '/home',
+          path: '/',
         },
       ],
     };
@@ -140,8 +140,7 @@ export default {
   background: linear-gradient(90deg, #006df2 0%, #00c07e 100%);
   &-menu {
     margin: 0 auto;
-    padding-right: 30px;
-    width: 1310px;
+    width: 1280px;
     height: 100%;
     display: flex;
     justify-content: space-between;

@@ -244,16 +244,20 @@ export default {
         this.companyList = params.data?.companyList || [];
       });
     },
+    resizeChart() {
+      if (this.myChart) {
+        this.myChart.resize();
+      }
+    },
   },
   mounted() {
     this.$nextTick(() => {
       this.initChart();
     });
-    window.addEventListener('resize', () => this.myChart.resize());
+    window.addEventListener('resize', this.resizeChart);
   },
   beforeDestroy() {
-    this.myChart.dispose();
-    window.removeListener('resize', () => this.myChart);
+    window.removeEventListener('resize', this.resizeChart);
   },
 };
 </script>

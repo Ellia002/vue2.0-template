@@ -3,6 +3,18 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
+// 重写路由实例，处理点击相同路由报错问题
+let push = VueRouter.prototype.push;
+VueRouter.prototype.push = function (location) {
+  // 调用push方法且篡改push方法内部this指向->vueRouter类的实例
+  push.call(
+    this,
+    location,
+    () => {},
+    () => {}
+  );
+};
+
 const routes = [
   {
     path: '/',

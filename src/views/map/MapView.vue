@@ -249,6 +249,11 @@ export default {
     this.$nextTick(() => {
       this.initChart();
     });
+    window.addEventListener('resize', () => this.myChart.resize());
+  },
+  beforeDestroy() {
+    this.myChart.dispose();
+    window.removeListener('resize', () => this.myChart);
   },
 };
 </script>

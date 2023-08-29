@@ -34,7 +34,12 @@
         </el-form-item>
         <el-form-item class="auto-code-item" label="短信验证码">
           <el-input v-model="form.authCode"></el-input>
-          <el-button type="primary">发送</el-button>
+          <el-button v-if="countdown === 0" type="primary" @click="sendCode"
+            >发送</el-button
+          >
+          <el-button disabled v-else type="primary" @click="sendCode"
+            >{{ countdown }}s</el-button
+          >
         </el-form-item>
         <el-form-item class="head-title-item" label="技术信息"></el-form-item>
         <el-form-item label="技术描述">
@@ -90,6 +95,7 @@ export default {
         desc: '',
       },
       isCurrent: 0,
+      countdown: 0,
     };
   },
   mounted() {
@@ -104,6 +110,21 @@ export default {
     },
     changeTab(index) {
       this.isCurrent = index;
+    },
+    updateCountdown() {
+      if (this.countdown > 0) {
+        this.countdown--; // 倒计时减少一秒
+        setTimeout(() => {
+          this.updateCountdown(); // 继续更新倒计时
+        }, 1000); // 每秒更新一次
+      }
+    },
+    sendCode() {
+      // 发送验证码的逻辑代码
+
+      // 开始倒计时
+      this.countdown = 60;
+      this.updateCountdown();
     },
   },
 };

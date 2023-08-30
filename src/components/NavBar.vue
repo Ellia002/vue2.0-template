@@ -146,10 +146,6 @@ export default {
     justify-content: space-between;
     > li {
       min-width: 120px;
-      font-size: 18px;
-      font-family: Microsoft YaHei;
-      font-weight: bold;
-      color: #fff;
       flex: 1;
       height: 100%;
       position: relative;
@@ -157,6 +153,10 @@ export default {
         padding: 0 20px;
         width: 100%;
         height: 100%;
+        font-size: 18px;
+        font-family: Microsoft YaHei;
+        font-weight: bold;
+        color: #fff;
         display: flex;
         align-items: center;
         justify-content: center;

@@ -66,10 +66,10 @@ export default {
     },
   },
   mounted() {
-    window.addEventListener('mousewheel', this.handleScroll, { passive: true });
+    window.addEventListener('wheel', this.handleScroll, { passive: true });
   },
   beforeDestroy() {
-    window.removeEventListener('mousewheel', this.handleScroll, {
+    window.removeEventListener('wheel', this.handleScroll, {
       passive: true,
     });
   },
@@ -81,6 +81,7 @@ export default {
   padding: 0 80px;
   display: flex;
   background-color: #091830;
+  flex: 1;
   .tab-list {
     margin-top: 50px;
     padding: 0 10px;
@@ -105,7 +106,8 @@ export default {
     flex: 1;
     .el-carousel__container {
       width: 100%;
-      height: 600px;
+      height: 100%;
+      // height: 600px;
       .el-carousel__item {
         display: flex;
         width: 100%;

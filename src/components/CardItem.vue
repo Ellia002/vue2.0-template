@@ -54,7 +54,6 @@ export default {
     padding: 28px 16px 37px;
     .title {
       margin-bottom: 16px;
-      height: 18px;
       font-size: 17px;
       font-weight: bold;
       color: #252a30;

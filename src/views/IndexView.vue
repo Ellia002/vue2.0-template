@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <!-- 头部 -->
     <header-comp></header-comp>
     <!-- 导航 -->
@@ -28,3 +28,11 @@ export default {
   methods: {},
 };
 </script>
+
+<style lang="scss" scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+</style>

@@ -149,6 +149,7 @@ export default {
       flex: 1;
       height: 100%;
       position: relative;
+      color: #fff;
       > span {
         padding: 0 20px;
         width: 100%;

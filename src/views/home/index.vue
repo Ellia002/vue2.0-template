@@ -3,10 +3,14 @@
     <div class="main-box">
       <div class="policy-box">
         <div class="photo-box">
-          <img src="../../assets/img/photo.jpg" alt="" />
-          <p class="desc-text">
-            中国光伏行业协会标委会组件工作组和支撑部件工作组2023年第一次工作会议顺利召开
-          </p>
+          <el-carousel>
+            <el-carousel-item v-for="item in 4" :key="item">
+              <img src="../../assets/img/photo.jpg" alt="" />
+              <p class="desc-text">
+                中国光伏行业协会标委会组件工作组和支撑部件工作组2023年第一次工作会议顺利召开
+              </p>
+            </el-carousel-item>
+          </el-carousel>
         </div>
         <div class="policy-area">
           <div class="com-tab-box">
@@ -294,27 +298,27 @@ export default {
           subList: [
             {
               name: '回收企业申报',
-              icon: '',
+              icon: require('@/assets/img/Group 13658.svg'),
             },
             {
               name: '光伏行业规范条件申报',
-              icon: '',
+              icon: require('@/assets/img/Group 13659.svg'),
             },
             {
               name: '光伏行业规范条件申报',
-              icon: '',
+              icon: require('@/assets/img/Group 13658.svg'),
             },
             {
               name: '创新技术成果申报',
-              icon: '',
+              icon: require('@/assets/img/Group 13661.svg'),
             },
             {
               name: '标准立项申话',
-              icon: '',
+              icon: require('@/assets/img/Group 13667.svg'),
             },
             {
               name: '敬请期待',
-              icon: '',
+              icon: require('@/assets/img/Group 13663.svg'),
             },
           ],
         },
@@ -323,27 +327,27 @@ export default {
           subList: [
             {
               name: '光伏智能制能力成热晓评价',
-              icon: '',
+              icon: require('@/assets/img/Group 13668.svg'),
             },
             {
               name: '智能光伏产品测试与实证',
-              icon: '',
+              icon: require('@/assets/img/Group 13666.svg'),
             },
             {
               name: '智能光伏系统钦件评测',
-              icon: '',
+              icon: require('@/assets/img/Group 13664.svg'),
             },
             {
               name: '技术成热晚评价',
-              icon: '',
+              icon: require('@/assets/img/Group 13665.svg'),
             },
             {
               name: '光伏企业碳核查',
-              icon: '',
+              icon: require('@/assets/img/Group 13660.svg'),
             },
             {
               name: '中请碳标签',
-              icon: '',
+              icon: require('@/assets/img/Group 13662.svg'),
             },
           ],
         },
@@ -352,15 +356,15 @@ export default {
           subList: [
             {
               name: '回收需求发布',
-              icon: '',
+              icon: require('@/assets/img/Group 13670.svg'),
             },
             {
               name: '企业需求数据库',
-              icon: '',
+              icon: require('@/assets/img/Group 13671.svg'),
             },
             {
               name: '敬请期待',
-              icon: '',
+              icon: require('@/assets/img/Group 13669.svg'),
             },
           ],
         },
@@ -473,9 +477,22 @@ export default {
         width: 740px;
         height: 370px;
         position: relative;
+        ::v-deep .el-carousel {
+          height: 100%;
+          &__container {
+            height: 100%;
+          }
+          &__item {
+            display: flex;
+            align-items: center;
+          }
+          &__indicators {
+            display: none;
+          }
+        }
         img {
           width: 100%;
-          height: 100%;
+          // height: auto;
         }
         .desc-text {
           padding: 16px;
@@ -538,7 +555,10 @@ export default {
                 width: 38px;
                 height: 38px;
                 border-radius: 50%;
-                background-color: #eef8ff;
+                // background-color: #eef8ff;
+                img {
+                  width: 100%;
+                }
               }
               .name {
                 color: #333b43;

@@ -32,7 +32,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   height: 120px;
-  width: var(--main-width);
+  width: 1280px;;
   .head-title {
     margin-bottom: 14px;
     display: flex;

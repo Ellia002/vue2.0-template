@@ -140,7 +140,7 @@ export default {
 <style lang="scss" scoped>
 .report-form {
   margin: 0 auto;
-  width: var(--main-width);
+  width: 1280px;;
   display: flex;
   .tab-list {
     width: 200px;

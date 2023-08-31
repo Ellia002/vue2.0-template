@@ -37,7 +37,7 @@ export default {
   background-color: #202831;
   .footer-area-inner {
     margin: 0 auto;
-    width: var(--main-width);
+    width: 1280px;
     height: 174px;
     display: flex;
     align-items: center;

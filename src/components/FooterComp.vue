@@ -35,6 +35,7 @@ export default {
   color: #fff;
   line-height: 1;
   background-color: #202831;
+  flex-shrink: 0;
   .footer-area-inner {
     margin: 0 auto;
     width: 1280px;

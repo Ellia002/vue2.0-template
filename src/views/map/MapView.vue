@@ -11,6 +11,7 @@
 import * as echarts from 'echarts';
 import LifeCycle from './LifeCycle.vue';
 import CompanyListView from '@/views/map/CompanyListView';
+let myChart = null; // 可改可不改，官方说用这种性能比较好
 export default {
   name: 'MapView',
   components: {
@@ -88,13 +89,13 @@ export default {
       code: '',
       companyList: [],
       haveClicked: false,
-      myChart: null,
+      // myChart: null,
     };
   },
   methods: {
     initChart() {
       const chartContainer = this.$refs.myChart;
-      this.myChart = echarts.init(chartContainer);
+      myChart = echarts.init(chartContainer);
       // 配置选项和数据
       fetch('/js/china.json')
         .then((res) => res.json())
@@ -233,20 +234,20 @@ export default {
               }, //地图线的动画效果,
             ],
           };
-          this.myChart.setOption(options);
+          myChart.setOption(options);
         });
-      this.myChart.on('click', (params) => {
+      myChart.on('click', (params) => {
         this.haveClicked = true;
         this.companyList = params.data?.companyList || [];
       });
-      this.myChart.on('mouseover', (params) => {
+      myChart.on('mouseover', (params) => {
         if (this.haveClicked) return;
         this.companyList = params.data?.companyList || [];
       });
     },
     resizeChart() {
-      if (this.myChart) {
-        this.myChart.resize();
+      if (myChart) {
+        myChart.resize();
       }
     },
   },

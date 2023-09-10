@@ -60,7 +60,7 @@ export default {
 <style lang="scss" scoped>
 .innovative-product {
   margin: -10px auto 0;
-  width: 1280px;;
+  width: 1280px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

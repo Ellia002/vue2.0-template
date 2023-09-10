@@ -387,7 +387,7 @@ export default {
 .home-box {
   .main-box {
     margin: 0 auto 41px;
-    width: 1280px;;
+    width: 1280px;
     // 公共央视
     .head-line {
       margin-bottom: 33px;
@@ -595,7 +595,7 @@ export default {
     }
     ::v-deep .el-carousel {
       margin: -10px auto 0;
-      width: 1280px;;
+      width: 1280px;
       .el-carousel__container {
         height: 308px;
       }
@@ -616,7 +616,7 @@ export default {
   }
   .link-box {
     margin: 0 auto;
-    width: 1280px;;
+    width: 1280px;
     .link-title {
       margin-bottom: 24px;
       padding-bottom: 17px;

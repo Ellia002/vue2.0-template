@@ -137,6 +137,7 @@ export default {
 .nav-bar {
   margin-bottom: 24px;
   height: 80px;
+  flex-shrink: 0;
   background: linear-gradient(90deg, #006df2 0%, #00c07e 100%);
   &-menu {
     margin: 0 auto;
